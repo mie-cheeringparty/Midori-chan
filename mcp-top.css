@@ -9,6 +9,17 @@ img.navbar-logo-img {
     
 }
 
+
+nav .background {
+  background:white 100%;
+}
+
+header .navbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
 /* タイトル背景カルーセルの横幅 */
 div.container.title-cover {
   width: 100%;
@@ -74,7 +85,7 @@ ol.carousel-indicators {
   border:solid  1.5px #3C6;
   border-radius: 13px;
   width: auto; 
-  height: 150px;
+  height: 300px;
 background: #fff
 }
 .box26 .box-title {
@@ -97,7 +108,7 @@ background: #fff
 .box-scroll {
   overflow-y: auto;
   width: auto;
-  height: 130px;
+  height: 270px;
 }
 /* リストボックスグリッドの位置調整 */
 .col-listbox {
@@ -144,8 +155,8 @@ background: #fff
 .popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label {
      left: 50% !important;
      top: 50% !important;
-     margin-left: 270px !important;
-     margin-top: -310px !important;
+     margin-left: 230px !important;
+     margin-top: -260px !important;
 }
 }
 
@@ -226,6 +237,7 @@ max-width: 100%;
      1px solid #ccc;
      font-weight: bold;
 }
+
 .popupModal1 .modalMain {
      color:#222;
      text-align: left;
@@ -285,10 +297,10 @@ h2:before {
   transform: translate(-50%,-50%);
   z-index: -1;
 }
-    opacity: 1;
+    /* opacity: 1;
     padding: 10px;
     visibility: visible;
-}
+} */
 
 input[name=navinput]{
   display: none;
@@ -318,3 +330,5 @@ input[name=navinput]{
   opacity: 1;
   padding: 10px;
 }
+
+.section-container2{padding-top: 100px;}
