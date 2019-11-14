@@ -6,14 +6,11 @@ img.navbar-logo-img {
 .navbar-right li.dropdown ul.dropdown-menu {
   left: 0;
   min-width: 180px;
-    
 }
-
-
+/* ナビバー追従 */
 nav .background {
   background:white 100%;
 }
-
 header .navbar {
   position: fixed;
   top: 0px;
@@ -23,9 +20,10 @@ header .navbar {
 /* タイトル背景カルーセルの横幅 */
 div.container.title-cover {
   width: 100%;
+  padding-top: 65px;
 }
-/* タイトルのPC-スマホ対応 */
-@media only screen and (max-width: 991px), print {
+/* カルーセルスライドの幅切り替え対応 */
+@media only screen and (max-width: 767px), print {
     .jumbotron.carousel-image.slide-1,
     .jumbotron.carousel-image.slide-2,
     .jumbotron.carousel-image.slide-3 {
@@ -38,7 +36,7 @@ div.container.title-cover {
         margin-top: 5%;
     }    
 }
-@media only screen and (min-width: 992px), print {
+@media only screen and (min-width: 768px), print {
     .jumbotron.carousel-image.slide-1,
     .jumbotron.carousel-image.slide-2,
     .jumbotron.carousel-image.slide-3 {
@@ -67,13 +65,17 @@ ol.carousel-indicators {
     margin-bottom: 0%;
     bottom: 0px;
 }
+
 /* ブロック要素にしてセンタリング */
 .pos-center {
   display: block;
   margin: 0 auto;
 }
-
-
+/* ブロック間隔調整 */
+.img-spacer {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
 /* スクロール付きリストボックスのスタイル */
 .box26 {
@@ -113,6 +115,8 @@ background: #fff
 /* リストボックスグリッドの位置調整 */
 .col-listbox {
   padding-top: 30px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .background {background:linear-gradient(90deg,#3C6 0%,#3C6 10%,white 10%,white 90%,#3C6 90%,#3C6 100%);}
@@ -127,7 +131,6 @@ background: #fff
 .modalPopup2 { /* 初期設定 ポップアップ非表示 */
     display: none;
 }
-
 .popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label + .modalPopup2 {/* ラジオ１ チェックでポップアップ表示 */
     display: block;
     z-index: 998;
@@ -245,7 +248,7 @@ max-width: 100%;
      line-height: 1.8em;
 }
 
-
+/* アコーディオン */
 .acd-check{
     display: none;
 }
@@ -257,7 +260,6 @@ max-width: 100%;
     padding: 10px;
 }
 .acd-content{
-    
     height: 0;
     opacity: 0;
     padding: 0 10px;
@@ -266,8 +268,6 @@ max-width: 100%;
 }
 .acd-check:checked + .acd-label + .acd-content{
     height: auto;
-    
-    
     opacity: 1;
     padding: 10px;
     visibility: visible;
@@ -331,4 +331,13 @@ input[name=navinput]{
   padding: 10px;
 }
 
+/* コンテナ位置調整 */
 .section-container2{padding-top: 100px;}
+
+/* twitter-timelineを中央寄せ */
+.twt_wrap {
+  text-align: center;
+}
+.twt_wrap > iframe {
+  margin: auto;
+}
