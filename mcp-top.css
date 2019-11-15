@@ -17,10 +17,31 @@ header .navbar {
   left: 0px;
 }
 
-/* タイトル背景カルーセルの横幅 */
+/* ナビバー調整 */
+@media only screen and (max-width:359px), print {
+  a.navbar-brand {
+    padding: 26.5px 0px;
+  }
+  a.navbar-brand .navbar-logo-img {
+    max-width: 240px;
+    max-height: auto;
+  }
+  h1.page-title {
+    font-size: 35px;
+  }
+}
+@media only screen and (min-width:359px) and (max-width:388px), print {
+  a.navbar-brand {
+    padding: 26.5px 0;
+  }
+  a.navbar-brand .navbar-logo-img {
+    max-width: 300px;
+    max-height: auto;
+  }
+}
 div.container.title-cover {
   width: 100%;
-  padding-top: 65px;
+  padding-top: 70px;
 }
 /* カルーセルスライドの幅切り替え対応 */
 @media only screen and (max-width: 767px), print {
