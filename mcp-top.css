@@ -341,3 +341,7 @@ input[name=navinput]{
 .twt_wrap > iframe {
   margin: auto;
 }
+
+.midori img { width: 100%; }
+
+
