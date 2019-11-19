@@ -19,8 +19,8 @@ masterブランチに変更を反映(commit)すると、公開されているサ
 ### .htaccess  
 旧サイトに.htaccessを設定すると新サイトへの誘導がスムーズ。  
 旧サイトへのアクセスをすべて新サイトへリダイレクト(転送)するため、導入するかどうかお任せします。  
-RewriteEngine On
-RewriteRule  index.html$ https://mie-cheeringparty.netlify.com/index.html [R=301,L]
+RewriteEngine On  
+RewriteRule  index.html$ https://mie-cheeringparty.netlify.com/index.html [R=301,L]  
   
 ---
 > **以下、関係者向けの内容となります。**  
