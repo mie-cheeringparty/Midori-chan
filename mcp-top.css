@@ -6,45 +6,26 @@ img.navbar-logo-img {
 .navbar-right li.dropdown ul.dropdown-menu {
   left: 0;
   min-width: 180px;
+    
 }
-/* ナビバー追従 */
+
+
 nav .background {
   background:white 100%;
 }
+
 header .navbar {
   position: fixed;
   top: 0px;
   left: 0px;
 }
 
-/* ナビバー調整 */
-@media only screen and (max-width:359px), print {
-  a.navbar-brand {
-    padding: 26.5px 0px;
-  }
-  a.navbar-brand .navbar-logo-img {
-    max-width: 240px;
-    max-height: auto;
-  }
-  h1.page-title {
-    font-size: 35px;
-  }
-}
-@media only screen and (min-width:359px) and (max-width:388px), print {
-  a.navbar-brand {
-    padding: 26.5px 0;
-  }
-  a.navbar-brand .navbar-logo-img {
-    max-width: 300px;
-    max-height: auto;
-  }
-}
+/* タイトル背景カルーセルの横幅 */
 div.container.title-cover {
   width: 100%;
-  padding-top: 70px;
 }
-/* カルーセルスライドの幅切り替え対応 */
-@media only screen and (max-width: 767px), print {
+/* タイトルのPC-スマホ対応 */
+@media only screen and (max-width: 991px), print {
     .jumbotron.carousel-image.slide-1,
     .jumbotron.carousel-image.slide-2,
     .jumbotron.carousel-image.slide-3 {
@@ -57,7 +38,7 @@ div.container.title-cover {
         margin-top: 5%;
     }    
 }
-@media only screen and (min-width: 768px), print {
+@media only screen and (min-width: 992px), print {
     .jumbotron.carousel-image.slide-1,
     .jumbotron.carousel-image.slide-2,
     .jumbotron.carousel-image.slide-3 {
@@ -86,17 +67,13 @@ ol.carousel-indicators {
     margin-bottom: 0%;
     bottom: 0px;
 }
-
 /* ブロック要素にしてセンタリング */
 .pos-center {
   display: block;
   margin: 0 auto;
 }
-/* ブロック間隔調整 */
-.img-spacer {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
+
+
 
 /* スクロール付きリストボックスのスタイル */
 .box26 {
@@ -136,8 +113,6 @@ background: #fff
 /* リストボックスグリッドの位置調整 */
 .col-listbox {
   padding-top: 30px;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .background {background:linear-gradient(90deg,#3C6 0%,#3C6 10%,white 10%,white 90%,#3C6 90%,#3C6 100%);}
@@ -152,6 +127,7 @@ background: #fff
 .modalPopup2 { /* 初期設定 ポップアップ非表示 */
     display: none;
 }
+
 .popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label + .modalPopup2 {/* ラジオ１ チェックでポップアップ表示 */
     display: block;
     z-index: 998;
@@ -171,8 +147,8 @@ background: #fff
 }
 @media (min-width: 768px) {/* PCのときはページの真ん中の600x600領域 */
 .popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label + .modalPopup2{
-         width: 800px;
-         height: 800px;
+         width: 600px;
+         height: 600px;
          padding: 30px;
 
     }
@@ -269,7 +245,7 @@ max-width: 100%;
      line-height: 1.8em;
 }
 
-/* アコーディオン */
+
 .acd-check{
     display: none;
 }
@@ -281,6 +257,7 @@ max-width: 100%;
     padding: 10px;
 }
 .acd-content{
+    
     height: 0;
     opacity: 0;
     padding: 0 10px;
@@ -289,6 +266,8 @@ max-width: 100%;
 }
 .acd-check:checked + .acd-label + .acd-content{
     height: auto;
+    
+    
     opacity: 1;
     padding: 10px;
     visibility: visible;
@@ -318,10 +297,10 @@ h2:before {
   transform: translate(-50%,-50%);
   z-index: -1;
 }
-    /* opacity: 1;
+    opacity: 1;
     padding: 10px;
     visibility: visible;
-} */
+}
 
 input[name=navinput]{
   display: none;
@@ -352,17 +331,150 @@ input[name=navinput]{
   padding: 10px;
 }
 
-/* コンテナ位置調整 */
+.midori img { width: 100%; }
 .section-container2{padding-top: 100px;}
 
-/* twitter-timelineを中央寄せ */
-.twt_wrap {
-  text-align: center;
+@charset "utf-8";
+
+.slideshow {
+	position: relative;
+	overflow: hidden;
 }
-.twt_wrap > iframe {
-  margin: auto;
+input[name="slideshow"] {
+	display: none;
 }
 
-.midori img { width: 100%; }
+/* :::::: slideContents :::::: */
+.slideContents {
+	position: relative;
+	background: #fff;
+	text-align: center;
+	-webkit-user-select: none;
+	user-select: none;
+	transition: transform .6s;
+}
+.slideContents section {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transform: translateX(100%);
+	transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.slideContents section img {
+	max-width: 100%;
+	/* padding: 0 50px; */
+	box-sizing: border-box;
+	vertical-align: middle;
+}
 
+/* :::::: arrows :::::: */
+.arrow,
+.arrow label,
+.arrow .ico {
+	position: absolute;
+}
+.arrow {
+	top: 0;
+	margin: 0;
+	transition: background .3s;
+}
+.prev {
+	left: 0;
+}
+.next {
+	right: 0;
+}
+.arrow:hover {
+	background: #3C6;
+}
+.arrow,
+.arrow label {
+	cursor: pointer;
+	width: 50px;
+	height: 100%;
+}
+.arrow label {
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.arrow .ico {
+	top: calc(50% - 6px);
+	width: 12px;
+	height: 12px;
+	border-top: 3px solid #fff;
+	opacity: 0;
+}
+.prev .ico {
+	left: 50%;
+	border-left: 3px solid #fff;
+	transform: rotate(-45deg);
+	transition: left .3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .3s;
+}
+.next .ico {
+	right: 50%;
+	border-right: 3px solid #fff;
+	transform: rotate(45deg);
+	transition: right .3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .3s;
+}
+.arrow:hover .ico {
+	opacity: .6;
+}
+.prev:hover .ico {
+	left: calc(50% - 6px);
+}
+.next:hover .ico {
+	right: calc(50% - 6px);
+}
 
+/* :::::: mechanism :::::: */
+#switch1:checked ~ .slideContents #slide1,
+#switch2:checked ~ .slideContents #slide2,
+#switch3:checked ~ .slideContents #slide3,
+#switch4:checked ~ .slideContents #slide4,
+#switch5:checked ~ .slideContents #slide5 {
+	position: relative;
+	transform: none;
+}
+#switch1:checked ~ .slideContents #slide5,
+#switch1:checked ~ .slideContents #slide4,
+#switch2:checked ~ .slideContents #slide1,
+#switch2:checked ~ .slideContents #slide5,
+#switch3:checked ~ .slideContents #slide2,
+#switch3:checked ~ .slideContents #slide1,
+#switch4:checked ~ .slideContents #slide3,
+#switch4:checked ~ .slideContents #slide2,
+#switch5:checked ~ .slideContents #slide4,
+#switch5:checked ~ .slideContents #slide3 {
+	transform: translateX(-100%);
+}
+#switch1:checked ~ .slideContents #slide3,
+#switch1:checked ~ .slideContents #slide4,
+#switch2:checked ~ .slideContents #slide4,
+#switch2:checked ~ .slideContents #slide5,
+#switch3:checked ~ .slideContents #slide5,
+#switch3:checked ~ .slideContents #slide1,
+#switch4:checked ~ .slideContents #slide1,
+#switch4:checked ~ .slideContents #slide2,
+#switch5:checked ~ .slideContents #slide2,
+#switch5:checked ~ .slideContents #slide3 {
+	transition-duration: 0s;
+}
+
+/* :::::: arrow mechanism :::::: */
+.arrow label {
+	pointer-events: none;
+}
+#switch1:checked ~ .prev label[for="switch5"],
+#switch2:checked ~ .prev label[for="switch1"],
+#switch3:checked ~ .prev label[for="switch2"],
+#switch4:checked ~ .prev label[for="switch3"],
+#switch5:checked ~ .prev label[for="switch4"],
+#switch1:checked ~ .next label[for="switch2"],
+#switch2:checked ~ .next label[for="switch3"],
+#switch3:checked ~ .next label[for="switch4"],
+#switch4:checked ~ .next label[for="switch5"],
+#switch5:checked ~ .next label[for="switch1"] {
+	pointer-events: auto;
+}
