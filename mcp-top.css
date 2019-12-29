@@ -171,8 +171,8 @@ background: #fff
 }
 @media (min-width: 768px) {/* PCのときはページの真ん中の600x600領域 */
 .popupModal1 > input:nth-child(1):checked + label + input:nth-child(3) + label + input:nth-child(5) + label + .modalPopup2{
-         width: 600px;
-         height: 600px;
+         width: 800px;
+         height: 800px;
          padding: 30px;
 
     }
